@@ -70,10 +70,28 @@
                     }
                 }
             }
+
+            adicionarPecas(){
+                const peca = new Peca('Torre', '♖', 'branca');
+                peca.renderizar(this.casas[0][0])
+            }
+        }
+
+        class Peca {
+            constructor(nome, simbolo, cor){
+                this.nome = nome;
+                this.simbolo = simbolo;
+                this.cor = cor;
+            }
+
+            renderizar(casa) {
+                casa.textContent = this.simbolo
+            }
         }
 
         const tabuleiro = new Tabuleiro(document.getElementById("tabuleiro"));
-        tabuleiro.criarCasas()
+        tabuleiro.criarCasas();
+        tabuleiro.adicionarPecas();
     </script>
 </body>
 
