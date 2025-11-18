@@ -40,7 +40,6 @@
 
         .escura {
             background: #555;
-            color: white;
         }
     </style>
 </head>
@@ -82,7 +81,19 @@
 
                 for (let i = 0; i < 8; i++){
                     new Peao("preta").renderizar(this.casas[1][i])
+                }
+
+                ordemPecas.forEach(
+                    (TipoPeca,coluna) => {
+                    const peca = new TipoPeca("branca");
+                    peca.renderizar(this.casas[7][coluna])
+                 }
+                );
+
+                for (let i = 0; i < 8; i++){
+                    new Peao("branca").renderizar(this.casas[6][i])
                 }   
+
             }
         }
 
