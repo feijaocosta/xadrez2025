@@ -72,8 +72,17 @@
             }
 
             adicionarPecas(){
-                const torreBranca = new Torre('branca');
-                torreBranca.renderizar(this.casas[0][0])
+                const ordemPecas = [Torre, Cavalo, Bispo, Rainha, Rei, Bispo, Cavalo, Torre];
+                ordemPecas.forEach(
+                    (TipoPeca,coluna) => {
+                    const peca = new TipoPeca("preta");
+                    peca.renderizar(this.casas[0][coluna])
+                 }
+                );
+
+                for (let i = 0; i < 8; i++){
+                    new Peao("preta").renderizar(this.casas[1][i])
+                }   
             }
         }
 
